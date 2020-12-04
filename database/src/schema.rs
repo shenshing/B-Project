@@ -1,7 +1,6 @@
 table! {
-    images (serial_id) {
-        serial_id -> Int4,
-        img_id -> Nullable<Varchar>,
+    images (img_id) {
+        img_id -> Varchar,
         pro_type -> Nullable<Varchar>,
         img_name -> Nullable<Array<Text>>,
         created_at -> Timestamp,
@@ -9,9 +8,8 @@ table! {
 }
 
 table! {
-    products (serial_id) {
-        serial_id -> Int4,
-        pro_id -> Nullable<Varchar>,
+    products (pro_id) {
+        pro_id -> Varchar,
         pro_type -> Nullable<Varchar>,
         pro_description -> Nullable<Varchar>,
         pro_quantity -> Nullable<Int4>,

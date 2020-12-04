@@ -5,8 +5,7 @@ use super::schema::{images, products};
 #[derive(QueryableByName, Debug)]
 #[table_name="images"]
 pub struct Images {
-    pub serial_id:          i32,
-    pub img_id:             Option<String>,
+    pub img_id:             String,
     pub pro_type:           Option<String>,
     pub img_name:           Option<Vec<String>>,
     pub created_at:         SystemTime,    
@@ -20,9 +19,9 @@ pub struct Image {
     pub img_name:           Vec<String>
 }
 
-#[derive(Queryable)]
+#[derive(QueryableByName, Debug)]
+#[table_name="products"]
 pub struct Products {
-    pub serial_id:          i32,
     pub pro_id:             Option<String>,
     pub pro_type:           Option<String>,
     pub pro_description:    Option<String>,
