@@ -3,7 +3,7 @@ use diesel::PgConnection;
 use diesel::sql_query;
 use diesel::prelude::*;
 
-pub fn insert_new_image(pro: Product, connection: &PgConnection) -> Result<String, String> {
+pub fn insert_new_product(pro: Product, connection: &PgConnection) -> Result<String, String> {
     let statement = format!("Insert Into products Values ('{}', '{}', '{}', '{}');", 
         pro.pro_id, pro.pro_type, pro.pro_description, pro.pro_quantity
     );

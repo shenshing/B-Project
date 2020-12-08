@@ -1,6 +1,7 @@
 use std::time::SystemTime;
 use super::schema::{images, products};
 // use diesel::sql_types::{Integer, Varchar, Timestamp};
+use serde_derive::Deserialize;
 
 #[derive(QueryableByName, Debug)]
 #[table_name="images"]
@@ -11,7 +12,7 @@ pub struct Images {
     pub created_at:         SystemTime,    
 }
 
-#[derive(Insertable, Debug)]
+#[derive(Insertable, Debug, Deserialize)]
 #[table_name="images"]
 pub struct Image {
     pub img_id:             String,
@@ -29,7 +30,7 @@ pub struct Products {
     pub created_at:         SystemTime,
 }
 
-#[derive(Insertable)]
+#[derive(Insertable, Deserialize)]
 #[table_name="products"]
 pub struct Product {
     pub pro_id:             String,
