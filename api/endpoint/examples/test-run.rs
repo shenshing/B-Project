@@ -13,17 +13,6 @@ async fn main() -> std::io::Result<()> {
 
     HttpServer::new(|| {
         App::new().wrap(middleware::Logger::default())
-            // .service(
-            // // web::resource("/")
-            //     // .route(web::get().to(index))
-            //     // .route(web::post().to(upload_img)),
-            //     // upload_img
-            //     // index,
-            //     upload_product,
-            //     // upload_img
-            // )
-            // .service(favicon)
-            // .service(favicon_)
             .service(upload_product)
             .service(upload_img)
             .service(get_image)
