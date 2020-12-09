@@ -1,8 +1,8 @@
 use actix_web::{HttpServer, App, middleware};
 use endpoint::product_endpoint::upload_product;
-use endpoint::image_endpoint::{upload_img, favicon};
-use endpoint::image_endpoint::favicon_;
-// use endpoint::product_endpoint::index;
+use endpoint::image_endpoint::{upload_img, get_image};
+// use endpoint::image_endpoint::favicon_;
+use endpoint::product_endpoint::index;
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
@@ -22,10 +22,12 @@ async fn main() -> std::io::Result<()> {
             //     upload_product,
             //     // upload_img
             // )
-            .service(favicon)
-            .service(favicon_)
+            // .service(favicon)
+            // .service(favicon_)
             .service(upload_product)
             .service(upload_img)
+            .service(get_image)
+            .service(index)
     })
     .bind(ip)?
     .run()

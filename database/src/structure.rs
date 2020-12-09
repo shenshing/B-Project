@@ -1,6 +1,5 @@
 use std::time::SystemTime;
 use super::schema::{images, products};
-// use diesel::sql_types::{Integer, Varchar, Timestamp};
 use serde_derive::Deserialize;
 
 #[derive(QueryableByName, Debug)]

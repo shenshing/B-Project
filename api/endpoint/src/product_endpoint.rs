@@ -1,4 +1,4 @@
-use actix_web::{post, get, HttpResponse, web, Error};
+use actix_web::{post, get, HttpResponse, web, /*Error*/};
 // use actix_multipart::Multipart;
 // use std::io::Write;
 // use futures::{StreamExt, TryStreamExt};
@@ -26,12 +26,12 @@ async fn upload_product(pro_info: web::Json<Product>) -> HttpResponse {
     }
 }
 
-// use http::StatusCode;
-// #[get("/")]
-// async fn index() -> HttpResponse {
-//     HttpResponse::Ok()
-//         .content_type("plain/text")
-//         .header("X-Hdr", "sample")
-//         .status(StatusCode::NOT_FOUND)
-//         .body("data")
-// }
+
+#[get("/")]
+async fn index() -> HttpResponse {
+    HttpResponse::Ok()
+        .content_type("plain/text")
+        .header("X-Hdr", "sample")
+        .status(StatusCode::NOT_FOUND)
+        .body("data")
+}
