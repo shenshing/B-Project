@@ -14,3 +14,5 @@ pub fn insert_new_product(pro: Product, connection: &PgConnection) -> Result<Str
             Err(err) => return Err(format!("Error: {}", err))
         }
 }
+
+// pub get_product_by_id(id: String, connection: &PgConnection) -> P

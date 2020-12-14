@@ -10,6 +10,7 @@ table! {
 table! {
     products (pro_id) {
         pro_id -> Varchar,
+        pro_name -> Nullable<Varchar>,
         pro_type -> Nullable<Varchar>,
         pro_description -> Nullable<Varchar>,
         pro_quantity -> Nullable<Int4>,

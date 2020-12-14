@@ -3,6 +3,8 @@ use database::connection::establish_connection;
 use database::image_db_op::insert_new_image;
 use database::structure::Image;
 
+use std::env;
+
 fn main() {
     // read_img(&establish_connection());
 
@@ -16,6 +18,9 @@ fn main() {
     // insert_new(img, &establish_connection());
 
 
-    
+    let database_url = env::var("DATABASE_URL")
+        .expect("DATABASE_URL must be set");
+
+    println!("database url: {}", database_url);
 
 }
